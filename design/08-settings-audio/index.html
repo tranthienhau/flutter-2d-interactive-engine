@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Parent Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#291800",
+                    "on-primary-fixed-variant": "#4109d7",
+                    "on-tertiary-fixed": "#1b192e",
+                    "danger": "#DC2626",
+                    "outline-variant": "#c9c4d9",
+                    "secondary-fixed-dim": "#ffba4b",
+                    "tertiary-fixed-dim": "#c8c3e0",
+                    "surface-container-highest": "#e6deff",
+                    "secondary": "#815600",
+                    "primary-fixed": "#e5deff",
+                    "success": "#16A34A",
+                    "text-tertiary": "#938CAD",
+                    "surface-dim": "#ded5fa",
+                    "text-secondary": "#5B5473",
+                    "surface-tint": "#5a39ee",
+                    "surface-bright": "#fdf8ff",
+                    "surface-container": "#f2ebff",
+                    "surface-alt": "#EFEBFB",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#ece4ff",
+                    "on-secondary-fixed-variant": "#624000",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#f4eeff",
+                    "on-secondary-container": "#6a4600",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#f6f1ff",
+                    "on-primary-fixed": "#190064",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#57546c",
+                    "on-surface-variant": "#474556",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#706c86",
+                    "primary-container": "#6b4eff",
+                    "warning": "#D97706",
+                    "surface-variant": "#e6deff",
+                    "border": "#E6E1F2",
+                    "secondary-fixed": "#ffddb1",
+                    "outline": "#787587",
+                    "on-tertiary-fixed-variant": "#47445c",
+                    "tertiary-fixed": "#e5dffd",
+                    "background": "#F6F4FD",
+                    "primary": "#522de6",
+                    "on-tertiary-container": "#f6f1ff",
+                    "inverse-surface": "#322d49",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#fdaf1e",
+                    "inverse-primary": "#c8bfff",
+                    "on-background": "#1d1833",
+                    "surface": "#FFFFFF",
+                    "surface-container-low": "#f7f1ff",
+                    "on-surface": "#1d1833",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#c8bfff",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-xl": "32px",
+                    "stack-sm": "8px",
+                    "stack-lg": "24px",
+                    "gutter": "16px",
+                    "touch-target-min": "56px",
+                    "stack-md": "16px",
+                    "edge-padding": "20px"
+            },
+            "fontFamily": {
+                    "display-mobile": [
+                            "\"Baloo 2\""
+                    ],
+                    "body": [
+                            "\"Baloo 2\""
+                    ],
+                    "label": [
+                            "\"Baloo 2\""
+                    ],
+                    "caption": [
+                            "\"Baloo 2\""
+                    ],
+                    "display": [
+                            "\"Baloo 2\""
+                    ],
+                    "title": [
+                            "\"Baloo 2\""
+                    ]
+            },
+            "fontSize": {
+                    "display-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "caption": [
+                            "13px",
+                            {
+                                    "lineHeight": "18px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "display": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "title": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Baloo 2', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        /* Custom Slider Styling */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: #FFFFFF;
+            cursor: pointer;
+            margin-top: -8px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+            border: 2px solid #6b4eff;
+        }
+
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 8px;
+            cursor: pointer;
+            background: #E6E1F2;
+            border-radius: 4px;
+        }
+        
+        /* Dynamic track fill via inline style variables or JS (handled by CSS for simplicity here with a gradient hack if needed, but JS is better) */
+        
+        /* Custom Toggle Switch Styling */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #6b4eff;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #6b4eff;
+        }
+        
+        .soft-elevation {
+            box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col items-center justify-start pb-safe pt-[59px]">
+<!-- Main Container - optimized for mobile view -->
+<main class="w-full max-w-md px-edge-padding flex flex-col gap-stack-lg">
+<!-- Header -->
+<header class="flex items-center justify-between w-full min-h-[56px]">
+<button class="w-[56px] h-[56px] flex items-center justify-start text-text-secondary active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[28px]" data-icon="close">close</span>
+</button>
+<h1 class="font-display-mobile text-display-mobile flex-1 text-center">Settings</h1>
+<div class="w-[56px] h-[56px]"></div> <!-- Spacer to center title -->
+</header>
+<!-- 3-Channel Audio Section -->
+<section class="flex flex-col gap-stack-sm w-full">
+<h2 class="font-title text-title text-text-secondary px-4">Audio Controls</h2>
+<div class="bg-surface rounded-[20px] soft-elevation flex flex-col w-full overflow-hidden">
+<!-- Music Slider Row -->
+<div class="flex items-center justify-between p-4 min-h-touch-target-min border-b border-border">
+<div class="flex flex-col flex-1 gap-2 mr-4">
+<label class="font-label text-label text-on-surface">Music (BGM)</label>
+<div class="relative w-full flex items-center h-8">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 h-2 rounded-l bg-primary-container z-0" style="width: 70%;"></div>
+<input class="relative z-10 w-full bg-transparent" max="100" min="0" type="range" value="70"/>
+</div>
+</div>
+<button class="w-[48px] h-[48px] flex items-center justify-center text-text-tertiary active:scale-95 transition-transform rounded-full hover:bg-surface-alt">
+<span class="material-symbols-outlined" data-icon="volume_up">volume_up</span>
+</button>
+</div>
+<!-- Voiceovers Slider Row -->
+<div class="flex items-center justify-between p-4 min-h-touch-target-min border-b border-border">
+<div class="flex flex-col flex-1 gap-2 mr-4">
+<label class="font-label text-label text-on-surface">Voiceovers</label>
+<div class="relative w-full flex items-center h-8">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 h-2 rounded-l bg-primary-container z-0" style="width: 90%;"></div>
+<input class="relative z-10 w-full bg-transparent" max="100" min="0" type="range" value="90"/>
+</div>
+</div>
+<button class="w-[48px] h-[48px] flex items-center justify-center text-text-tertiary active:scale-95 transition-transform rounded-full hover:bg-surface-alt">
+<span class="material-symbols-outlined" data-icon="record_voice_over">record_voice_over</span>
+</button>
+</div>
+<!-- Sound Effects Slider Row -->
+<div class="flex items-center justify-between p-4 min-h-touch-target-min">
+<div class="flex flex-col flex-1 gap-2 mr-4">
+<label class="font-label text-label text-on-surface">Sound Effects</label>
+<div class="relative w-full flex items-center h-8">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 h-2 rounded-l bg-primary-container z-0" style="width: 60%;"></div>
+<input class="relative z-10 w-full bg-transparent" max="100" min="0" type="range" value="60"/>
+</div>
+</div>
+<button class="w-[48px] h-[48px] flex items-center justify-center text-text-tertiary active:scale-95 transition-transform rounded-full hover:bg-surface-alt">
+<span class="material-symbols-outlined" data-icon="celebration">celebration</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Preferences Section -->
+<section class="flex flex-col gap-stack-sm w-full">
+<h2 class="font-title text-title text-text-secondary px-4">Preferences</h2>
+<div class="bg-surface rounded-[20px] soft-elevation flex flex-col w-full overflow-hidden">
+<!-- Background Music Toggle Row -->
+<div class="flex items-center justify-between p-4 min-h-touch-target-min border-b border-border">
+<span class="font-label text-label text-on-surface">Background Music</span>
+<div class="relative inline-block w-12 h-6 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-surface appearance-none cursor-pointer z-10 right-0 border-primary-container" id="toggle1" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-primary-container cursor-pointer" for="toggle1"></label>
+</div>
+</div>
+<!-- Reduce Motion Toggle Row -->
+<div class="flex items-center justify-between p-4 min-h-touch-target-min border-b border-border">
+<span class="font-label text-label text-on-surface">Reduce Motion</span>
+<div class="relative inline-block w-12 h-6 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-surface appearance-none cursor-pointer z-10 left-0" id="toggle2" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-text-tertiary cursor-pointer" for="toggle2"></label>
+</div>
+</div>
+<!-- Parent Lock Toggle Row -->
+<div class="flex items-center justify-between p-4 min-h-touch-target-min">
+<div class="flex items-center gap-2">
+<span class="font-label text-label text-on-surface">Parent Lock</span>
+<span class="material-symbols-outlined text-[18px] text-text-secondary" data-icon="lock">lock</span>
+</div>
+<div class="relative inline-block w-12 h-6 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-surface appearance-none cursor-pointer z-10 right-0 border-primary-container" id="toggle3" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-primary-container cursor-pointer" for="toggle3"></label>
+</div>
+</div>
+</div>
+</section>
+<!-- Danger Action Section -->
+<section class="flex flex-col w-full pb-8">
+<button class="bg-surface rounded-[20px] soft-elevation flex items-center justify-center p-4 min-h-touch-target-min w-full active:scale-95 transition-transform hover:bg-surface-variant/20">
+<span class="font-title text-title text-danger">Reset Progress</span>
+</button>
+</section>
+</main>
+<script>
+        // Simple script to handle dynamic slider fill updating visually
+        const sliders = document.querySelectorAll('input[type="range"]');
+        sliders.forEach(slider => {
+            slider.addEventListener('input', (e) => {
+                const val = e.target.value;
+                const trackFill = e.target.previousElementSibling;
+                if(trackFill) {
+                    trackFill.style.width = val + '%';
+                }
+            });
+        });
+        
+        // Simple toggle logic for visual feedback
+        const toggles = document.querySelectorAll('.toggle-checkbox');
+        toggles.forEach(toggle => {
+            toggle.addEventListener('change', (e) => {
+                const label = e.target.nextElementSibling;
+                if(e.target.checked) {
+                    e.target.style.right = '0';
+                    e.target.style.left = 'auto';
+                    e.target.style.borderColor = '#6b4eff';
+                    label.style.backgroundColor = '#6b4eff';
+                } else {
+                    e.target.style.left = '0';
+                    e.target.style.right = 'auto';
+                    e.target.style.borderColor = '#ffffff';
+                    label.style.backgroundColor = '#938CAD';
+                }
+            });
+        });
+    </script>
+</body></html>

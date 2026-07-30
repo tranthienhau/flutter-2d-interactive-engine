@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bloom Play - Lesson Player</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-container": "#fdaf1e",
+                        "text-tertiary": "#938CAD",
+                        "tertiary-container": "#706c86",
+                        "on-surface-variant": "#474556",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#322d49",
+                        "surface-bright": "#fdf8ff",
+                        "on-tertiary-fixed": "#1b192e",
+                        "secondary-fixed": "#ffddb1",
+                        "surface-variant": "#e6deff",
+                        "on-tertiary-container": "#f6f1ff",
+                        "outline": "#787587",
+                        "primary": "#522de6",
+                        "on-error-container": "#93000a",
+                        "secondary": "#815600",
+                        "on-primary-fixed": "#190064",
+                        "surface-dim": "#ded5fa",
+                        "on-secondary-fixed-variant": "#624000",
+                        "outline-variant": "#c9c4d9",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#5a39ee",
+                        "surface-container-high": "#ece4ff",
+                        "warning": "#D97706",
+                        "on-primary-container": "#f6f1ff",
+                        "inverse-primary": "#c8bfff",
+                        "on-background": "#1d1833",
+                        "text-secondary": "#5B5473",
+                        "on-tertiary-fixed-variant": "#47445c",
+                        "on-secondary-fixed": "#291800",
+                        "success": "#16A34A",
+                        "tertiary-fixed-dim": "#c8c3e0",
+                        "tertiary": "#57546c",
+                        "border": "#E6E1F2",
+                        "surface-container-low": "#f7f1ff",
+                        "on-surface": "#1d1833",
+                        "primary-fixed-dim": "#c8bfff",
+                        "error-container": "#ffdad6",
+                        "surface-alt": "#EFEBFB",
+                        "surface-container-highest": "#e6deff",
+                        "inverse-on-surface": "#f4eeff",
+                        "danger": "#DC2626",
+                        "tertiary-fixed": "#e5dffd",
+                        "secondary-fixed-dim": "#ffba4b",
+                        "on-secondary-container": "#6a4600",
+                        "primary-fixed": "#e5deff",
+                        "surface-container": "#f2ebff",
+                        "on-primary-fixed-variant": "#4109d7",
+                        "background": "#F6F4FD",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#FFFFFF",
+                        "primary-container": "#6b4eff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "stack-sm": "8px",
+                        "gutter": "16px",
+                        "touch-target-min": "56px",
+                        "stack-lg": "24px",
+                        "stack-xl": "32px",
+                        "edge-padding": "20px",
+                        "stack-md": "16px"
+                    },
+                    fontFamily: {
+                        "display-mobile": ["\"Baloo 2\""],
+                        "label": ["\"Baloo 2\""],
+                        "display": ["\"Baloo 2\""],
+                        "body": ["\"Baloo 2\""],
+                        "title": ["\"Baloo 2\""],
+                        "caption": ["\"Baloo 2\""]
+                    },
+                    fontSize: {
+                        "display-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "title": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "caption": ["13px", { "lineHeight": "18px", "fontWeight": "500" }]
+                    },
+                    boxShadow: {
+                        'soft-elevation': '0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06)',
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Baloo 2', sans-serif; }
+        .dashed-trail {
+            stroke-dasharray: 8 8;
+            animation: dash 1s linear infinite reverse;
+        }
+        @keyframes dash {
+            to { stroke-dashoffset: 16; }
+        }
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .pulse-soft {
+            animation: pulse-soft 3s ease-in-out infinite;
+        }
+        @keyframes pulse-soft {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        .shimmer-slot {
+            animation: shimmer-pulse 2s ease-in-out infinite;
+        }
+        @keyframes shimmer-pulse {
+            0% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+            100% { opacity: 0.7; transform: scale(1); }
+        }
+        .banner-float {
+            animation: banner-float 4s ease-in-out infinite;
+        }
+        @keyframes banner-float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-4px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background m-0 p-0 overflow-hidden h-[884px] w-full flex justify-center bg-gray-900">
+<!-- Mobile Device Frame Container -->
+<div class="relative w-full max-w-md h-full bg-surface shadow-2xl overflow-hidden flex flex-col">
+<!-- Background Scene -->
+<div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-80" data-alt="A soft, bright, and playful 2D vector illustration of a sunny meadow, suitable for a preschool learning app background. Light mode aesthetic with rolling green hills, subtle daisies, fluffy white clouds in a pale blue sky, and a gentle glowing sun. The color palette uses pastel greens, soft blues, and warm yellows to create a safe, joyful environment. Flat design with soft gradients, no harsh lines." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBB4udVuYpGjycSio-3mfW6R4QdAwn3DR1nnfE9v7OmvXyIvA30m_VGYlO4ZG-fuRsqlnbvdfIcr1LVjkAN5I4q4MvNYBgxopyGuxJKygK2GSRvWGnpWpVGJSYkC27MKtcCg2saj2zKZX03qkr1GVkWRkFIqJzq8KWtuyix_ZOqOMn1OxHKDvqp-JYq_fT1fPRF1KI0gR1raem5M5J2-PybArLwksajYVhxh-7tMQOMsFaibAvKjAJGTQvJnAk9X_vCgaQQM9NBj2mW')">
+</div>
+<!-- Foreground UI Layer (z-10) -->
+<div class="relative z-10 w-full h-full flex flex-col pointer-events-none">
+<!-- Top App Bar (Custom for Game) -->
+<div class="w-full px-edge-padding pt-[59px] pb-stack-sm flex justify-between items-center pointer-events-auto">
+<!-- Back Button -->
+<button class="w-touch-target-min h-touch-target-min rounded-full bg-surface-variant flex items-center justify-center shadow-soft-elevation hover:bg-surface-container-high active:scale-95 transition-all duration-200">
+<span class="material-symbols-outlined text-primary text-3xl font-bold">arrow_back</span>
+</button>
+<!-- Progress Pips -->
+<div class="flex items-center gap-2 bg-surface/50 backdrop-blur-sm px-4 py-3 rounded-full shadow-sm border border-white/50">
+<div class="w-4 h-4 rounded-full bg-primary shadow-inner"></div>
+<div class="w-4 h-4 rounded-full bg-primary shadow-inner"></div>
+<div class="w-4 h-4 rounded-full bg-outline-variant shadow-inner"></div>
+<div class="w-4 h-4 rounded-full bg-outline-variant shadow-inner"></div>
+<div class="w-4 h-4 rounded-full bg-outline-variant shadow-inner"></div>
+</div>
+</div>
+<!-- Instruction Ribbon Area -->
+<div class="w-full px-edge-padding mt-stack-sm flex justify-center pointer-events-auto banner-float">
+<div class="bg-surface-alt/90 backdrop-blur-md px-2 py-2 pr-6 rounded-full flex items-center gap-4 shadow-soft-elevation border-2 border-white/80">
+<!-- Speaker Button -->
+<button class="w-[50px] h-[50px] rounded-full bg-primary flex items-center justify-center shadow-md active:scale-90 transition-transform shrink-0">
+<span class="material-symbols-outlined text-white text-2xl" style="font-variation-settings: 'FILL' 1;">volume_up</span>
+</button>
+<!-- Instruction Text -->
+<h1 class="font-display-mobile text-display-mobile text-primary leading-none mt-1">Drag the star to its home!</h1>
+</div>
+</div>
+<!-- Game Canvas Area -->
+<div class="flex-1 w-full relative mt-stack-xl flex flex-col">
+<!-- Target Slots (Top) -->
+<div class="flex justify-center items-center gap-8 mt-10 px-edge-padding pointer-events-none">
+<!-- Star Target -->
+<div class="relative w-[90px] h-[90px] flex items-center justify-center shimmer-slot">
+<svg class="w-full h-full overflow-visible" viewbox="0 0 100 100">
+<path d="M50 5 L63 35 L95 35 L68 55 L78 85 L50 65 L22 85 L32 55 L5 35 L37 35 Z" fill="transparent" stroke="var(--tw-colors-outline-variant)" stroke-dasharray="8 8" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"></path>
+</svg>
+<div class="absolute inset-0 bg-primary/5 rounded-full blur-xl -z-10"></div>
+</div>
+<!-- Circle Target -->
+<div class="relative w-[90px] h-[90px] flex items-center justify-center shimmer-slot" style="animation-delay: 0.3s">
+<svg class="w-full h-full overflow-visible" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="transparent" r="42" stroke="var(--tw-colors-outline-variant)" stroke-dasharray="8 8" stroke-linecap="round" stroke-width="4"></circle>
+</svg>
+</div>
+<!-- Square Target -->
+<div class="relative w-[90px] h-[90px] flex items-center justify-center shimmer-slot" style="animation-delay: 0.6s">
+<svg class="w-full h-full overflow-visible" viewbox="0 0 100 100">
+<rect fill="transparent" height="84" rx="16" stroke="var(--tw-colors-outline-variant)" stroke-dasharray="8 8" stroke-linecap="round" stroke-width="4" width="84" x="8" y="8"></rect>
+</svg>
+</div>
+</div>
+<!-- Mascot (Right side) -->
+<div class="absolute bottom-32 -right-4 w-48 h-48 z-20 pointer-events-none float-animation">
+<img class="w-full h-full object-contain drop-shadow-xl" data-alt="A cute, friendly 2D vector cartoon fox mascot named Bramble, designed for a preschool app. The fox is bright orange with a fluffy white tail, standing on its hind legs and cheering happily with a wide smile and sparkling eyes. It is positioned as if interacting with the user, rendered in a modern tactile style with soft shading, rounded shapes, and a joyful, encouraging expression. A small shiny yellow speech sparkle floats near its head." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn6THclmiC9mURp4pLrKcn1A01oW_3EqKQU1msqhB0XsP-BF4uUqX0omD-oRQjH1soddMSToaRx5CNGboiFC7irbqPy4zqqcy5bwDF66HIqrrQw-XZmci96rcXuuiBXyenSOjZ8Y0t63VVqTrR9NhBOWfhqZbj7aZmeSIZgrR5mcvlHgfhiCvb1FF0SALVQhPLOf0nvh463qGodA-e4uJi8gOepaUq0qNeYx6GSAAcRhVHZrZAOMNisqR3YN8j3zetXLGTHbJZNsKM"/>
+</div>
+<!-- Dashed Trail (Mid-Drag Illusion) -->
+<svg class="absolute top-[28%] left-[20%] w-[120px] h-[250px] -z-10 pointer-events-none overflow-visible" viewbox="0 0 120 250">
+<path class="dashed-trail opacity-70" d="M100 230 C 80 180, 20 120, 20 20" fill="transparent" stroke="var(--tw-colors-primary-fixed)" stroke-linecap="round" stroke-width="6"></path>
+</svg>
+<!-- Mid-Drag Star Token (z-30 to be above everything) -->
+<div class="absolute top-[35%] left-[15%] w-[110px] h-[110px] z-30 pointer-events-auto cursor-grab active:cursor-grabbing hover:scale-105 transition-transform">
+<svg class="w-full h-full drop-shadow-[0_8px_24px_rgba(253,175,30,0.4)]" viewbox="0 0 100 100">
+<path d="M50 5 L63 35 L95 35 L68 55 L78 85 L50 65 L22 85 L32 55 L5 35 L37 35 Z" fill="var(--tw-colors-secondary-container)" stroke="white" stroke-linejoin="round" stroke-width="4"></path>
+<!-- Inner highlight for 3D tactile feel -->
+<path d="M50 15 L60 38 L82 38 L63 52 L70 73 L50 58 L30 73 L37 52 L18 38 L40 38 Z" fill="white" opacity="0.2"></path>
+</svg>
+</div>
+<!-- Draggable Tokens Bank (Bottom) -->
+<div class="mt-auto mb-[60px] pb-safe px-edge-padding flex justify-center items-end gap-10 pointer-events-auto">
+<!-- Empty Slot where Star was -->
+<div class="w-[100px] h-[100px] rounded-full bg-black/5 blur-sm opacity-50"></div>
+<!-- Violet Circle Token -->
+<div class="w-[100px] h-[100px] z-20 cursor-grab active:cursor-grabbing hover:scale-105 transition-transform group pulse-soft" style="animation-delay: 0.5s">
+<svg class="w-full h-full drop-shadow-[0_8px_24px_rgba(82,45,230,0.3)]" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="var(--tw-colors-primary)" r="46" stroke="white" stroke-width="4"></circle>
+<circle cx="50" cy="50" fill="white" opacity="0.1" r="38"></circle>
+<ellipse cx="35" cy="25" fill="white" opacity="0.4" rx="10" ry="6" transform="rotate(-30 35 25)"></ellipse>
+</svg>
+</div>
+<!-- Amber Square Token -->
+<div class="w-[100px] h-[100px] z-20 cursor-grab active:cursor-grabbing hover:scale-105 transition-transform group pulse-soft" style="animation-delay: 1s">
+<svg class="w-full h-full drop-shadow-[0_8px_24px_rgba(255,186,75,0.4)]" viewbox="0 0 100 100">
+<rect fill="var(--tw-colors-secondary-fixed-dim)" height="92" rx="20" stroke="white" stroke-width="4" width="92" x="4" y="4"></rect>
+<rect fill="white" height="76" opacity="0.15" rx="14" width="76" x="12" y="12"></rect>
+<ellipse cx="25" cy="20" fill="white" opacity="0.5" rx="12" ry="5" transform="rotate(-20 25 20)"></ellipse>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

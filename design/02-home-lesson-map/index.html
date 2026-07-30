@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bloom Play - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#f6f1ff",
+                        "text-secondary": "#5B5473",
+                        "inverse-surface": "#322d49",
+                        "on-tertiary-fixed": "#1b192e",
+                        "surface-alt": "#EFEBFB",
+                        "on-primary-fixed-variant": "#4109d7",
+                        "tertiary-fixed-dim": "#c8c3e0",
+                        "primary-container": "#6b4eff",
+                        "tertiary-fixed": "#e5dffd",
+                        "tertiary-container": "#706c86",
+                        "border": "#E6E1F2",
+                        "on-tertiary-fixed-variant": "#47445c",
+                        "tertiary": "#57546c",
+                        "primary": "#522de6",
+                        "on-tertiary-container": "#f6f1ff",
+                        "surface-variant": "#e6deff",
+                        "inverse-on-surface": "#f4eeff",
+                        "on-surface-variant": "#474556",
+                        "on-surface": "#1d1833",
+                        "on-secondary-fixed-variant": "#624000",
+                        "on-secondary-container": "#6a4600",
+                        "surface": "#FFFFFF",
+                        "primary-fixed-dim": "#c8bfff",
+                        "danger": "#DC2626",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#fdaf1e",
+                        "on-primary-fixed": "#190064",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#ded5fa",
+                        "surface-bright": "#fdf8ff",
+                        "success": "#16A34A",
+                        "secondary": "#815600",
+                        "warning": "#D97706",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#1d1833",
+                        "text-tertiary": "#938CAD",
+                        "background": "#F6F4FD",
+                        "secondary-fixed": "#ffddb1",
+                        "on-secondary-fixed": "#291800",
+                        "primary-fixed": "#e5deff",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#787587",
+                        "surface-container": "#f2ebff",
+                        "surface-container-highest": "#e6deff",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#c9c4d9",
+                        "surface-tint": "#5a39ee",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f7f1ff",
+                        "secondary-fixed-dim": "#ffba4b",
+                        "inverse-primary": "#c8bfff",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#ece4ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "stack-lg": "24px",
+                        "stack-xl": "32px",
+                        "stack-md": "16px",
+                        "gutter": "16px",
+                        "touch-target-min": "56px",
+                        "edge-padding": "20px"
+                    },
+                    "fontFamily": {
+                        "caption": ["\"Baloo 2\""],
+                        "title": ["\"Baloo 2\""],
+                        "display": ["\"Baloo 2\""],
+                        "label": ["\"Baloo 2\""],
+                        "display-mobile": ["\"Baloo 2\""],
+                        "body": ["\"Baloo 2\""]
+                    },
+                    "fontSize": {
+                        "caption": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+                        "title": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "display-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    },
+                    boxShadow: {
+                        'soft-elevation': '0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06)',
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .map-trail {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            background-image: linear-gradient(to bottom, #c9c4d9 50%, transparent 50%);
+            background-size: 4px 16px;
+            background-repeat: repeat-y;
+            z-index: 0;
+        }
+        
+        .pulse-animation {
+            animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(107, 78, 255, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(107, 78, 255, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(107, 78, 255, 0); }
+        }
+        
+        body { padding-top: env(safe-area-inset-top, 59px); padding-bottom: env(safe-area-inset-bottom, 34px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen text-on-surface font-body pb-[100px] pt-[80px]">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface h-touch-target-min flex justify-between items-center px-edge-padding pt-stack-md transition-transform active:scale-95 duration-200">
+<div class="flex items-center gap-stack-sm hover:opacity-80 cursor-pointer h-touch-target-min min-w-[56px]">
+<img class="w-12 h-12 rounded-full object-cover shadow-soft-elevation border-2 border-surface-alt" data-alt="A cute, highly detailed, 3D rendered fox mascot character named Bramble, designed for a preschool app. The fox has big friendly eyes, vibrant orange and white fur, and a playful expression, set against a bright, modern light-mode background with soft lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHEsrWbifdX4zUY2w4eLA3PxwnKj9Whezz9gPMwNCVvAfJ_MpjCITZVv7FCNP-9FLy8xR445Dhp0VDelkhQTSdVfgYTQoigwuuq36n9ORq4UZbEYdqLOI1O9O9exAxE71Ezer9JH0g9hDrIBCTHkcK75MElE2UeixI6g8QZIBm7wa88FHof2n9qj40A8RyaaxWPUKZgTpn1hKFYAmo1PGWwAo0qLJkNKvWjV2K5MkVMiwfQK5j2lWXO10TtNrHny2HRhKRUZ8mDU07"/>
+</div>
+<div class="flex-1 text-center hidden md:block">
+<h1 class="font-display-mobile text-display-mobile text-primary font-extrabold tracking-tight">Bloom Play</h1>
+</div>
+<div class="flex items-center gap-2 bg-surface-alt px-4 py-2 rounded-full h-[48px] hover:opacity-80 cursor-pointer shadow-soft-elevation">
+<span class="font-title text-title text-primary-fixed-variant">Bramble</span>
+<span class="text-tertiary-container">•</span>
+<span class="font-title text-title text-secondary-container">12</span>
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</header>
+<main class="max-w-md mx-auto px-edge-padding space-y-stack-xl relative z-10 pt-stack-lg">
+<!-- Hero Card -->
+<section aria-label="Current Lesson" class="rounded-[20px] shadow-soft-elevation p-6 text-on-primary bg-gradient-to-r from-primary-container to-secondary-container relative overflow-hidden h-[200px] flex flex-col justify-between" role="region">
+<div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(circle at 80% 20%, white 0%, transparent 40%);"></div>
+<div>
+<span class="bg-surface/20 text-on-primary px-3 py-1 rounded-full font-label text-label inline-block mb-2">Up Next</span>
+<h2 class="font-display-mobile text-display-mobile leading-tight drop-shadow-md">Lesson 5:<br/>Count the Stars</h2>
+</div>
+<button aria-label="Play Lesson 5" class="bg-surface text-primary font-title text-title h-touch-target-min rounded-full px-6 flex items-center justify-center gap-2 shadow-soft-elevation active:scale-95 transition-transform w-fit">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                Play
+            </button>
+<img class="absolute -right-4 -bottom-4 w-32 h-32 object-contain opacity-90 drop-shadow-lg" data-alt="A whimsical, 3D rendered illustration of sparkling golden stars and a cute telescope floating in space, designed for a preschool app. The illustration has soft edges, vibrant colors, and a joyful mood, perfectly matching a bright, modern tactile aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwtajHv09zBBgu20ptjb9qzZaPfsxD6eYx--hmVOaESVBKEdmwXNxMQYTdQZ3O9CWrkmScknjsj2XRG65z5MdrQYyUn5_nyxV0YNajmQf6ASXmZD_4UMMm3UR8p0AXFF7lUqInYHk3KhDinfwo1-bTLjXysibFdincOf2MyJIhKNREUpkQakjs8-xZXjK7S2Qvo4Lpmhh3OpnKucIXc_DCCoztmZpfQ38LB8QE11MyPeuBcvRPH19C9iHGf2IqyiJ8S-xW3nPii1LZ"/>
+</section>
+<!-- Lesson Map -->
+<section aria-label="Lesson Path" class="relative py-stack-lg min-h-[500px]" role="region">
+<div class="map-trail"></div>
+<div class="relative z-10 space-y-12 flex flex-col items-center">
+<!-- Node 1: Completed -->
+<button aria-label="Completed: Shapes" class="w-[72px] h-[72px] rounded-full bg-secondary-container text-surface flex items-center justify-center shadow-soft-elevation active:scale-95 transition-transform transform -translate-x-8">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">check</span>
+</button>
+<!-- Node 2: Completed -->
+<button aria-label="Completed: Colors" class="w-[72px] h-[72px] rounded-full bg-secondary-container text-surface flex items-center justify-center shadow-soft-elevation active:scale-95 transition-transform transform translate-x-12">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">check</span>
+</button>
+<!-- Node 3: Completed -->
+<button aria-label="Completed: Animals" class="w-[72px] h-[72px] rounded-full bg-secondary-container text-surface flex items-center justify-center shadow-soft-elevation active:scale-95 transition-transform transform -translate-x-4">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">check</span>
+</button>
+<!-- Node 4: Completed -->
+<button aria-label="Completed: Letters" class="w-[72px] h-[72px] rounded-full bg-secondary-container text-surface flex items-center justify-center shadow-soft-elevation active:scale-95 transition-transform transform translate-x-8">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">check</span>
+</button>
+<!-- Node 5: Current -->
+<div class="relative transform -translate-x-2">
+<div class="absolute inset-0 rounded-full pulse-animation bg-primary-container opacity-50"></div>
+<button aria-label="Current Lesson: Counting" class="w-[96px] h-[96px] rounded-full bg-primary-container text-surface flex items-center justify-center shadow-soft-elevation relative z-10 active:scale-95 transition-transform border-4 border-surface">
+<span class="material-symbols-outlined text-5xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<!-- Node 6: Locked -->
+<button aria-label="Locked Lesson" class="w-[64px] h-[64px] rounded-full bg-surface-variant text-text-tertiary flex items-center justify-center shadow-sm opacity-80 cursor-not-allowed transform translate-x-6" disabled="">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">lock</span>
+</button>
+<!-- Node 7: Locked -->
+<button aria-label="Locked Lesson" class="w-[64px] h-[64px] rounded-full bg-surface-variant text-text-tertiary flex items-center justify-center shadow-sm opacity-80 cursor-not-allowed transform -translate-x-10" disabled="">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">lock</span>
+</button>
+<!-- Node 8: Locked -->
+<button aria-label="Locked Lesson" class="w-[64px] h-[64px] rounded-full bg-surface-variant text-text-tertiary flex items-center justify-center shadow-sm opacity-80 cursor-not-allowed transform translate-x-2" disabled="">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">lock</span>
+</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center bg-surface dark:bg-surface-container-lowest px-edge-padding border-t border-outline-variant h-[84px] pb-safe z-50 md:hidden block">
+<!-- Active Tab: Home -->
+<button aria-label="Home" class="flex flex-col items-center justify-center text-primary bg-primary-fixed rounded-full px-4 py-1 hover:opacity-80 active:scale-90 transition-all duration-300 ease-out h-touch-target-min min-w-[56px]">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">house</span>
+<span class="font-label text-label">Home</span>
+</button>
+<!-- Inactive Tab: Play -->
+<button aria-label="Play" class="flex flex-col items-center justify-center text-text-tertiary hover:bg-surface-container-low transition-colors active:scale-90 h-touch-target-min min-w-[56px] px-2 rounded-xl">
+<span class="material-symbols-outlined text-2xl">category</span>
+<span class="font-label text-label mt-1">Play</span>
+</button>
+<!-- Inactive Tab: Closet -->
+<button aria-label="Closet" class="flex flex-col items-center justify-center text-text-tertiary hover:bg-surface-container-low transition-colors active:scale-90 h-touch-target-min min-w-[56px] px-2 rounded-xl">
+<span class="material-symbols-outlined text-2xl">checkroom</span>
+<span class="font-label text-label mt-1">Closet</span>
+</button>
+<!-- Inactive Tab: Progress -->
+<button aria-label="Progress" class="flex flex-col items-center justify-center text-text-tertiary hover:bg-surface-container-low transition-colors active:scale-90 h-touch-target-min min-w-[56px] px-2 rounded-xl">
+<span class="material-symbols-outlined text-2xl">stars</span>
+<span class="font-label text-label mt-1">Progress</span>
+</button>
+</nav>
+</body></html>

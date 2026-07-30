@@ -1,0 +1,123 @@
+{
+  "title": "Bloom Play",
+  "slug": "bloom-play",
+  "domain": "education",
+  "style": "bright",
+  "features": [
+    "2D interactive lessons for preschoolers",
+    "Responsive canvas scaling across phones and tablets",
+    "7 core mechanic templates (toggle, drag-target, slider, mask reveal, path trace, tap-hold, physics spawn)",
+    "Rive character with swappable costume skins",
+    "Costume unlocks tied to lesson progress",
+    "Lightweight particle celebrations (confetti, stars)",
+    "3-channel audio (BGM, voiceover, UI SFX)",
+    "Local persistence of progress and unlocks",
+    "Parent progress dashboard"
+  ],
+  "screenCount": 8,
+  "sharedComponents": {
+    "bottomTabBar": {
+      "tabs": ["Home", "Play", "Closet", "Progress"],
+      "note": "4 tabs, rounded outline icons: Home=house, Play=grid/shapes, Closet=hanger/shirt, Progress=star-chart. Active tab in accent violet #6B4EFF, inactive in muted violet-grey. Large 44pt+ targets, playful pill highlight behind active icon."
+    },
+    "statusBar": "Playful top bar on core screens: mascot avatar chip on the left, child name + star count on the right. Hidden on fullscreen lesson/celebration screens.",
+    "controls": "Big rounded pill primary button in accent violet with white bold label and soft shadow; secondary button is accentTint fill with violet text; cards 20px radius with soft shadow; chips are pill amber tags for lesson categories; all touch targets >=56pt for little fingers."
+  },
+  "screens": [
+    {
+      "name": "onboarding-pick-character",
+      "purpose": "First run: child picks their mascot character to start",
+      "content": "Full-bleed soft violet-to-amber gradient hero, big friendly title 'Pick your buddy!', a horizontal row of 3 large round character cards (Bramble the fox, Pip the owl, Momo the bear) each on a pastel disc, one big Start pill button. No data yet, first-run.",
+      "group": "onboarding",
+      "nav": "none",
+      "states": ["default"]
+    },
+    {
+      "name": "home-lesson-map",
+      "purpose": "Child browses the lesson journey map and taps a lesson to play",
+      "content": "Top playful bar with mascot chip and 12 gold stars. A winding lesson-path map (rounded stepping-stone nodes) with 10 lesson nodes: 4 completed (gold, checkmark), 1 current (pulsing violet, big Play), 5 locked (grey padlock). Each node shows a tiny icon (shapes, colors, counting, letters). One bold focal 'Continue: Lesson 5 - Count the Stars' hero card at top with a Play pill.",
+      "group": "core",
+      "nav": "Home",
+      "states": ["default"]
+    },
+    {
+      "name": "lesson-player",
+      "purpose": "The interactive lesson canvas where the child completes a mechanic",
+      "content": "Fullscreen interactive canvas, no tab bar. A Drag & Target mechanic: 3 draggable shape tokens at the bottom (star, circle, square) and 3 outlined target slots at the top on a bright scene, with the Rive mascot cheering on the side. Top-left round Back/Home button, top-right progress pips (2 of 5). Big voiceover replay speaker button. Instruction ribbon 'Drag the star to its home!'.",
+      "group": "core",
+      "nav": "none",
+      "states": ["default"]
+    },
+    {
+      "name": "lesson-complete",
+      "purpose": "Celebration screen after finishing a lesson, particle burst + reward",
+      "content": "Fullscreen celebration, no tab bar. Confetti and stars particle burst over a soft gradient, the Rive mascot doing a happy jump in the center, a big '3 stars!' award with three gold stars filling in, a 'New costume unlocked: Wizard Hat' reward card, and two big pills: 'Next Lesson' and 'Home'.",
+      "group": "core",
+      "nav": "none",
+      "states": ["default"]
+    },
+    {
+      "name": "mechanic-playground",
+      "purpose": "Sandbox showing the 7 reusable interaction mechanic templates",
+      "content": "Grid of 7 big rounded mechanic tiles, each a playful card with icon + name + one-line: State Toggle (day/night switch), Drag & Target (shape into slot), Analog Slider (fill the cup), Mask Reveal (scratch to reveal), Path Tracing (trace the letter A), Tap & Hold (grow the flower), Physics Spawn (pop bubbles). One tile is featured large at top as the focal element. Tab bar active on Play.",
+      "group": "core",
+      "nav": "Play",
+      "states": ["default"]
+    },
+    {
+      "name": "costume-closet",
+      "purpose": "Child dresses up their mascot with unlocked costume skins",
+      "content": "Large Rive mascot preview at top center on a spotlight disc wearing current outfit. Below, a horizontal set of category chips (Hats, Capes, Shoes, Pets) and a grid of costume thumbnails: some unlocked (tappable, selected ring), some locked (padlock + 'earn 2 stars'). Bottom Wear pill button. Tab bar active on Closet.",
+      "group": "core",
+      "nav": "Closet",
+      "states": ["default"]
+    },
+    {
+      "name": "progress-dashboard",
+      "purpose": "Parent view of lesson completion and stars earned",
+      "content": "Header 'Bramble's Progress'. One bold focal ring/number showing '4 of 10 lessons' with a big percentage. A weekly play-time bar chart in support amber, a list of recent lessons with stars earned and dates, and a 'Skills' section with progress bars for Shapes, Colors, Counting, Letters. Tab bar active on Progress.",
+      "group": "core",
+      "nav": "Progress",
+      "states": ["default"]
+    },
+    {
+      "name": "settings-audio",
+      "purpose": "Parent settings for the 3 audio channels and app options",
+      "content": "Full-screen settings sheet, no tab bar. A '3-Channel Audio' card with three labeled sliders: Music (BGM), Voiceovers, Sound Effects, each with a mute toggle. Below: toggles for Background Music on/off, Reduce Motion, and a Parent Lock (math gate) row, plus a Reset Progress destructive row. Rounded grouped cards.",
+      "group": "settings",
+      "nav": "none",
+      "states": ["default"]
+    }
+  ],
+  "designSystem": {
+    "theme": "light",
+    "frame": "393x852 mobile (iPhone 16/17). Respect safe areas: top ~59px, bottom ~34px.",
+    "color": {
+      "background": "#F6F4FD",
+      "surface": "#FFFFFF",
+      "surfaceAlt": "#EFEBFB",
+      "accent": "#6B4EFF",
+      "accentTint": "#E7E1FF",
+      "accentPressed": "#5A3FE0",
+      "support": "#FFB020",
+      "text": { "primary": "#1A1530", "secondary": "#5B5473", "tertiary": "#938CAD" },
+      "border": "#E6E1F2",
+      "success": "#16A34A",
+      "warning": "#D97706",
+      "danger": "#DC2626"
+    },
+    "type": {
+      "fontFamily": "Baloo 2",
+      "display": "32 / 700 / -0.02em",
+      "title": "20 / 600",
+      "body": "16 / 400",
+      "label": "14 / 500",
+      "caption": "13 / 500"
+    },
+    "radius": { "card": 20, "control": 14, "input": 12, "pill": 999 },
+    "spacing": "8pt scale; screen edge padding 20px; generous vertical rhythm",
+    "elevation": "soft only: card = 0 1px 2px rgba(0,0,0,.04) + 0 8px 24px rgba(0,0,0,.06)",
+    "icons": "ONE rounded outline set (Phosphor/Lucide), 24px, playful",
+    "a11y": "accent darkened for text where needed; tap targets >=56pt for kids"
+  }
+}

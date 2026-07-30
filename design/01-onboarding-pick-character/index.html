@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Pick your buddy</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-container": "#6b4eff",
+                      "on-error": "#ffffff",
+                      "surface-dim": "#ded5fa",
+                      "primary-fixed": "#e5deff",
+                      "surface-alt": "#EFEBFB",
+                      "on-primary-container": "#f6f1ff",
+                      "primary-fixed-dim": "#c8bfff",
+                      "tertiary-fixed": "#e5dffd",
+                      "on-tertiary-fixed": "#1b192e",
+                      "secondary": "#815600",
+                      "outline": "#787587",
+                      "tertiary": "#57546c",
+                      "inverse-surface": "#322d49",
+                      "on-background": "#1d1833",
+                      "text-tertiary": "#938CAD",
+                      "surface-container-low": "#f7f1ff",
+                      "on-surface": "#1d1833",
+                      "on-primary-fixed-variant": "#4109d7",
+                      "primary": "#522de6",
+                      "on-tertiary-fixed-variant": "#47445c",
+                      "surface-container-highest": "#e6deff",
+                      "surface": "#FFFFFF",
+                      "on-secondary-fixed-variant": "#624000",
+                      "on-tertiary-container": "#f6f1ff",
+                      "secondary-container": "#fdaf1e",
+                      "on-secondary-container": "#6a4600",
+                      "surface-bright": "#fdf8ff",
+                      "border": "#E6E1F2",
+                      "on-tertiary": "#ffffff",
+                      "surface-container": "#f2ebff",
+                      "surface-variant": "#e6deff",
+                      "outline-variant": "#c9c4d9",
+                      "secondary-fixed-dim": "#ffba4b",
+                      "danger": "#DC2626",
+                      "surface-container-high": "#ece4ff",
+                      "text-secondary": "#5B5473",
+                      "on-surface-variant": "#474556",
+                      "tertiary-fixed-dim": "#c8c3e0",
+                      "success": "#16A34A",
+                      "secondary-fixed": "#ffddb1",
+                      "on-secondary-fixed": "#291800",
+                      "tertiary-container": "#706c86",
+                      "on-primary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "background": "#F6F4FD",
+                      "on-error-container": "#93000a",
+                      "warning": "#D97706",
+                      "inverse-primary": "#c8bfff",
+                      "inverse-on-surface": "#f4eeff",
+                      "error": "#ba1a1a",
+                      "on-secondary": "#ffffff",
+                      "surface-tint": "#5a39ee",
+                      "on-primary-fixed": "#190064",
+                      "error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "edge-padding": "20px",
+                      "stack-xl": "32px",
+                      "stack-sm": "8px",
+                      "touch-target-min": "56px",
+                      "stack-md": "16px",
+                      "stack-lg": "24px",
+                      "gutter": "16px"
+              },
+              "fontFamily": {
+                      "title": ["\"Baloo 2\""],
+                      "label": ["\"Baloo 2\""],
+                      "body": ["\"Baloo 2\""],
+                      "display-mobile": ["\"Baloo 2\""],
+                      "display": ["\"Baloo 2\""],
+                      "caption": ["\"Baloo 2\""]
+              },
+              "fontSize": {
+                      "title": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                      "label": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                      "body": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                      "display-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                      "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                      "caption": ["13px", { "lineHeight": "18px", "fontWeight": "500" }]
+              },
+              "boxShadow": {
+                  "soft-lift": "0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06)"
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Baloo 2', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #6B4EFF 0%, #FFB020 100%);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col items-center">
+<main class="w-full max-w-md mx-auto min-h-screen flex flex-col relative overflow-hidden bg-background shadow-soft-lift">
+<!-- Hero Section -->
+<section class="hero-gradient pt-[79px] pb-[40px] px-edge-padding text-center rounded-b-[40px] relative z-10 flex-shrink-0">
+<h1 class="font-display-mobile text-display-mobile text-on-primary">Pick your buddy!</h1>
+<p class="font-body text-body text-on-primary opacity-90 mt-2">Who will join you on your adventure?</p>
+<!-- Decorative sparkles -->
+<span class="material-symbols-outlined absolute top-[60px] left-[30px] text-on-primary opacity-50" style="font-size: 24px;">arrow_back_ios_new</span>
+<span class="material-symbols-outlined absolute top-[90px] right-[40px] text-on-primary opacity-40" style="font-size: 20px;">arrow_back_ios_new</span>
+</section>
+<!-- Main Character Selection Area -->
+<section class="flex-grow flex flex-col justify-center items-center px-0 py-stack-xl relative z-0 -mt-stack-lg">
+<div class="w-full overflow-x-auto hide-scrollbar px-edge-padding pb-stack-lg pt-stack-xl flex justify-start md:justify-center items-center gap-stack-lg snap-x snap-mandatory">
+<!-- Bramble the fox -->
+<button class="snap-center flex-shrink-0 flex flex-col items-center gap-stack-sm group transition-transform duration-300 hover:-translate-y-1 focus:outline-none">
+<div class="w-28 h-28 rounded-full bg-[#FFE5CC] flex items-center justify-center transition-all duration-300 group-active:scale-95 shadow-soft-lift">
+<img alt="Bramble" class="w-20 h-20 object-contain pointer-events-none" data-alt="A highly detailed, 2D vector illustration of a friendly orange fox character named Bramble, designed for a preschool learning app. The style is modern tactile, flat, joyful, and safe, with soft curves and large expressive eyes. Light mode aesthetic, isolated on a transparent background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-fnUPWXK9Jrpa-3nTt7tGQTAoZEW5NXuV5e4h53nbfxYlOp4sNCicZGxkbD3jrIMW5zEJlIF9_W0_TUoVIDmFKErJiXFlRg_82SDtEOe_DxeWTJD-bzXnwQ9lryEeESIA5LAe5t_D5QjBky21cTBBPtiTNA4WvJEnKG-nIAoe8hWqCFyMmcW43vRDs_jFe-al7rAOlG323SfPqB5hiYRRa0zgfsGM7DloAlveeJGsd1uiFEK40a592SLZCCfB92R_ChDEOhftU471"/>
+</div>
+<span class="font-title text-title text-text-secondary group-hover:text-primary transition-colors">Bramble</span>
+</button>
+<!-- Pip the owl (Selected) -->
+<button class="snap-center flex-shrink-0 flex flex-col items-center gap-stack-sm focus:outline-none relative">
+<!-- Selection Indicator / Glow -->
+<div class="absolute -inset-2 bg-primary-container opacity-20 rounded-full blur-md -z-10"></div>
+<div class="w-32 h-32 rounded-full bg-[#CCF0F0] flex items-center justify-center transition-all duration-300 scale-105 border-4 border-surface shadow-soft-lift">
+<img alt="Pip" class="w-24 h-24 object-contain pointer-events-none" data-alt="A highly detailed, 2D vector illustration of a friendly teal owl character named Pip, designed for a preschool learning app. The style is modern tactile, flat, joyful, and safe, with soft curves and large expressive eyes. Light mode aesthetic, isolated on a transparent background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1GaJglDg1RWfoNMhCZ5wvlcdEm9jpTpiPxkb7jrdPSCBkY6X4TC2Dk5RhITsyJd4CCUgKOkQKWqEHQ5JA__NM3doCmoLX7CqfeG3mG2a5igq58XKg19WKIgcmjE6FURKJ6wUxBU-yK3QcYpHccXh3GRsQdPpnCdiBgS05_EhxECRGKc8iGkHsOp3xX8wlCe6BSC981vQ0Zk_fJWNg15jmASNq7M-yBBdWq3_6ib9UC7I5SlEIwYrpjybi9O3I_gqDCiThnYJsMHKB"/>
+</div>
+<span class="font-title text-title text-primary font-bold">Pip</span>
+<!-- Selected Checkmark -->
+<div class="absolute top-2 right-2 bg-success text-on-primary rounded-full w-6 h-6 flex items-center justify-center shadow-soft-lift">
+<span class="material-symbols-outlined" style="font-size: 16px; font-weight: 700;">check</span>
+</div>
+</button>
+<!-- Momo the bear -->
+<button class="snap-center flex-shrink-0 flex flex-col items-center gap-stack-sm group transition-transform duration-300 hover:-translate-y-1 focus:outline-none">
+<div class="w-28 h-28 rounded-full bg-[#E5D8CC] flex items-center justify-center transition-all duration-300 group-active:scale-95 shadow-soft-lift">
+<img alt="Momo" class="w-20 h-20 object-contain pointer-events-none" data-alt="A highly detailed, 2D vector illustration of a friendly brown bear character named Momo, designed for a preschool learning app. The style is modern tactile, flat, joyful, and safe, with soft curves and large expressive eyes. Light mode aesthetic, isolated on a transparent background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPkBkve0lNsBQ24qBiBkKRan45242JBGbITBnPGjL9PTGxbM2Y0qV-x1YEtsonYuLhhho14qo8ZD_jLzrNGc4A4yEGFmOBujJVl1TVU-pu0NIxvIhyGe8Hg5lfLVXtul0LIqa3yGIH1hgc7N5Dk9o1YEf06gbYwRi9E5oJ7R5A3Xrb9aLzuvHDN-aNxL_0nSErqTm09APMYjAuOJ1GLmCZ6oOu5GGvU9hzDZgSxUzoXcNkcnFeJqVCFioBfy-bCyQb_k336JQ9epA6"/>
+</div>
+<span class="font-title text-title text-text-secondary group-hover:text-primary transition-colors">Momo</span>
+</button>
+</div>
+<p class="font-caption text-caption text-text-tertiary text-center px-edge-padding mt-stack-md">
+                You can change this later in settings.
+            </p>
+</section>
+<!-- Footer / Action Area -->
+<section class="mt-auto px-edge-padding pb-[34px] pt-stack-md bg-background w-full flex-shrink-0">
+<button class="w-full h-touch-target-min rounded-full bg-primary-container text-on-primary font-title text-title flex items-center justify-center shadow-soft-lift transition-transform duration-200 active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-primary-fixed">
+                Start Playing
+                <span class="material-symbols-outlined ml-2" style="font-variation-settings: 'FILL' 1;">arrow_forward</span>
+</button>
+</section>
+</main>
+</body></html>

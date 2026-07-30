@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Mechanic Playground</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#ffddb1",
+                    "background": "#F6F4FD",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#ded5fa",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#291800",
+                    "on-primary-fixed": "#190064",
+                    "surface-container-low": "#f7f1ff",
+                    "outline": "#787587",
+                    "surface-bright": "#fdf8ff",
+                    "primary-fixed-dim": "#c8bfff",
+                    "on-tertiary-container": "#f6f1ff",
+                    "on-surface": "#1d1833",
+                    "inverse-on-surface": "#f4eeff",
+                    "surface-container": "#f2ebff",
+                    "surface": "#FFFFFF",
+                    "warning": "#D97706",
+                    "on-surface-variant": "#474556",
+                    "error": "#ba1a1a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#4109d7",
+                    "success": "#16A34A",
+                    "on-tertiary-fixed-variant": "#47445c",
+                    "tertiary-fixed": "#e5dffd",
+                    "text-secondary": "#5B5473",
+                    "on-primary-container": "#f6f1ff",
+                    "on-error": "#ffffff",
+                    "on-background": "#1d1833",
+                    "on-tertiary-fixed": "#1b192e",
+                    "primary": "#522de6",
+                    "text-tertiary": "#938CAD",
+                    "tertiary-container": "#706c86",
+                    "tertiary": "#57546c",
+                    "surface-container-high": "#ece4ff",
+                    "secondary-fixed-dim": "#ffba4b",
+                    "danger": "#DC2626",
+                    "inverse-primary": "#c8bfff",
+                    "secondary": "#815600",
+                    "primary-container": "#6b4eff",
+                    "secondary-container": "#fdaf1e",
+                    "on-secondary-fixed-variant": "#624000",
+                    "surface-tint": "#5a39ee",
+                    "inverse-surface": "#322d49",
+                    "border": "#E6E1F2",
+                    "surface-alt": "#EFEBFB",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e6deff",
+                    "primary-fixed": "#e5deff",
+                    "tertiary-fixed-dim": "#c8c3e0",
+                    "surface-container-highest": "#e6deff",
+                    "on-secondary-container": "#6a4600",
+                    "outline-variant": "#c9c4d9",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "touch-target-min": "56px",
+                    "stack-lg": "24px",
+                    "edge-padding": "20px",
+                    "stack-xl": "32px",
+                    "stack-md": "16px",
+                    "gutter": "16px",
+                    "stack-sm": "8px"
+            },
+            "fontFamily": {
+                    "caption": [
+                            "\"Baloo 2\""
+                    ],
+                    "title": [
+                            "\"Baloo 2\""
+                    ],
+                    "label": [
+                            "\"Baloo 2\""
+                    ],
+                    "display": [
+                            "\"Baloo 2\""
+                    ],
+                    "display-mobile": [
+                            "\"Baloo 2\""
+                    ],
+                    "body": [
+                            "\"Baloo 2\""
+                    ]
+            },
+            "fontSize": {
+                    "caption": [
+                            "13px",
+                            {
+                                    "lineHeight": "18px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "title": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "display": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "display-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+        },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            -webkit-tap-highlight-color: transparent;
+        }
+        .soft-shadow {
+            box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06);
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #6B4EFF, #FFB020);
+        }
+        
+        /* Dashed animation for letter A */
+        .dash-anim {
+            stroke-dasharray: 10, 10;
+            animation: dashMove 2s linear infinite;
+        }
+        @keyframes dashMove {
+            to {
+                stroke-dashoffset: -20;
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body text-body text-on-background pb-[100px] pt-safe flex flex-col md:items-center">
+<!-- Top App Bar (Hidden on Mobile) -->
+<header class="hidden md:flex items-center justify-between px-edge-padding w-full h-[59px] bg-surface dark:bg-surface-container-low shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_rgba(0,0,0,0.06)] sticky top-0 z-40 max-w-2xl mx-auto rounded-b-[20px]">
+<div class="flex items-center gap-stack-sm hover:opacity-90 active:scale-95 transition-transform duration-200 cursor-pointer min-h-touch-target-min">
+<div class="w-10 h-10 rounded-full bg-surface-alt flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-primary-container text-2xl" data-icon="cruelty_free">cruelty_free</span>
+</div>
+<span class="font-display text-display text-primary dark:text-primary-fixed-dim font-bold tracking-tight">Bloom Play</span>
+</div>
+<div class="flex items-center gap-stack-md">
+<nav class="flex items-center gap-stack-md">
+<button class="font-label text-label text-text-tertiary dark:text-tertiary-fixed-dim hover:opacity-90 active:scale-95 transition-transform duration-200 min-h-touch-target-min min-w-[56px] px-2 rounded-full hover:bg-surface-alt">Home</button>
+<button class="font-label text-label text-primary dark:text-primary-fixed-dim hover:opacity-90 active:scale-95 transition-transform duration-200 min-h-touch-target-min min-w-[56px] px-2 rounded-full hover:bg-surface-alt font-bold">Play</button>
+<button class="font-label text-label text-text-tertiary dark:text-tertiary-fixed-dim hover:opacity-90 active:scale-95 transition-transform duration-200 min-h-touch-target-min min-w-[56px] px-2 rounded-full hover:bg-surface-alt">Closet</button>
+<button class="font-label text-label text-text-tertiary dark:text-tertiary-fixed-dim hover:opacity-90 active:scale-95 transition-transform duration-200 min-h-touch-target-min min-w-[56px] px-2 rounded-full hover:bg-surface-alt">Progress</button>
+</nav>
+<div class="flex items-center gap-1 bg-surface-alt rounded-full px-3 py-1.5 h-10 hover:opacity-90 active:scale-95 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined text-secondary-container" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-title text-title text-primary font-bold">128</span>
+</div>
+</div>
+</header>
+<main class="w-full max-w-2xl px-edge-padding mt-stack-lg flex-grow">
+<!-- Header -->
+<div class="mb-stack-lg">
+<h1 class="font-display-mobile md:font-display text-display-mobile md:text-display text-primary font-bold">Playground</h1>
+<p class="font-title text-title text-text-secondary">Try every mechanic</p>
+</div>
+<!-- Focal Card -->
+<div class="w-full h-48 rounded-[20px] gradient-bg soft-shadow mb-stack-xl flex flex-col items-center justify-center p-stack-md relative overflow-hidden active:scale-[0.98] transition-transform duration-200 cursor-pointer group">
+<!-- Animated SVG Background Placeholder (Optional decorative touch if desired, but sticking to requested gradient) -->
+<div class="z-10 flex flex-col items-center">
+<!-- Large Dotted A SVG -->
+<div class="relative w-24 h-24 mb-2 flex items-center justify-center">
+<svg class="w-full h-full" viewbox="0 0 100 100">
+<path class="dash-anim" d="M50 10 L20 90 M50 10 L80 90 M30 65 L70 65" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></path>
+</svg>
+<!-- Finger cursor icon floating around -->
+<span class="material-symbols-outlined text-surface absolute bottom-0 right-0 animate-bounce" data-icon="touch_app" data-weight="fill" style="font-size: 32px;">touch_app</span>
+</div>
+<h2 class="font-title text-title text-on-tertiary font-bold text-center">Path Tracing</h2>
+<p class="font-body text-body text-on-tertiary text-center opacity-90">trace the letter A</p>
+</div>
+<!-- Subtle glow effect on hover -->
+<div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+</div>
+<!-- Grid of Mechanics -->
+<div class="grid grid-cols-2 gap-gutter mb-stack-xl">
+<!-- Tile 1 -->
+<button class="bg-surface rounded-[20px] soft-shadow p-stack-md flex flex-col items-center justify-center min-h-[140px] active:scale-95 transition-transform duration-200 hover:bg-surface-bright focus:outline-none focus:ring-4 focus:ring-primary-container focus:ring-opacity-50">
+<div class="w-16 h-16 rounded-full bg-surface-alt flex items-center justify-center mb-stack-sm">
+<span class="material-symbols-outlined text-primary-container text-3xl" data-icon="routine" data-weight="fill" style="font-variation-settings: 'FILL' 1;">routine</span>
+</div>
+<span class="font-title text-title text-on-surface text-center leading-tight">Day/Night<br/>switch</span>
+</button>
+<!-- Tile 2 -->
+<button class="bg-surface rounded-[20px] soft-shadow p-stack-md flex flex-col items-center justify-center min-h-[140px] active:scale-95 transition-transform duration-200 hover:bg-surface-bright focus:outline-none focus:ring-4 focus:ring-primary-container focus:ring-opacity-50">
+<div class="w-16 h-16 rounded-full bg-surface-alt flex items-center justify-center mb-stack-sm relative">
+<span class="material-symbols-outlined text-primary-container text-3xl absolute" data-icon="square">square</span>
+<svg class="absolute pointer-events-none opacity-30" height="40" viewbox="0 0 40 40" width="40">
+<rect class="text-primary" fill="none" height="36" rx="4" stroke="currentColor" stroke-dasharray="4 4" stroke-width="2" width="36" x="2" y="2"></rect>
+</svg>
+</div>
+<span class="font-title text-title text-on-surface text-center leading-tight">Shape into<br/>slot</span>
+</button>
+<!-- Tile 3 -->
+<button class="bg-surface rounded-[20px] soft-shadow p-stack-md flex flex-col items-center justify-center min-h-[140px] active:scale-95 transition-transform duration-200 hover:bg-surface-bright focus:outline-none focus:ring-4 focus:ring-primary-container focus:ring-opacity-50">
+<div class="w-16 h-16 rounded-full bg-surface-alt flex items-center justify-center mb-stack-sm">
+<span class="material-symbols-outlined text-primary-container text-3xl" data-icon="local_cafe" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_cafe</span>
+</div>
+<span class="font-title text-title text-on-surface text-center leading-tight">Fill the<br/>cup</span>
+</button>
+<!-- Tile 4 -->
+<button class="bg-surface rounded-[20px] soft-shadow p-stack-md flex flex-col items-center justify-center min-h-[140px] active:scale-95 transition-transform duration-200 hover:bg-surface-bright focus:outline-none focus:ring-4 focus:ring-primary-container focus:ring-opacity-50">
+<div class="w-16 h-16 rounded-full bg-surface-alt flex items-center justify-center mb-stack-sm relative">
+<span class="material-symbols-outlined text-secondary-container text-2xl absolute opacity-50" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary-container text-3xl z-10" data-icon="swipe">swipe</span>
+</div>
+<span class="font-title text-title text-on-surface text-center leading-tight">Scratch to<br/>reveal</span>
+</button>
+<!-- Tile 5 -->
+<button class="bg-surface rounded-[20px] soft-shadow p-stack-md flex flex-col items-center justify-center min-h-[140px] active:scale-95 transition-transform duration-200 hover:bg-surface-bright focus:outline-none focus:ring-4 focus:ring-primary-container focus:ring-opacity-50">
+<div class="w-16 h-16 rounded-full bg-surface-alt flex items-center justify-center mb-stack-sm relative">
+<span class="material-symbols-outlined text-success text-3xl absolute" data-icon="local_florist" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_florist</span>
+<span class="material-symbols-outlined text-primary-container absolute bottom-2 right-2 scale-75" data-icon="touch_app" data-weight="fill">touch_app</span>
+</div>
+<span class="font-title text-title text-on-surface text-center leading-tight">Grow the<br/>flower</span>
+</button>
+<!-- Tile 6 -->
+<button class="bg-surface rounded-[20px] soft-shadow p-stack-md flex flex-col items-center justify-center min-h-[140px] active:scale-95 transition-transform duration-200 hover:bg-surface-bright focus:outline-none focus:ring-4 focus:ring-primary-container focus:ring-opacity-50">
+<div class="w-16 h-16 rounded-full bg-surface-alt flex items-center justify-center mb-stack-sm">
+<span class="material-symbols-outlined text-primary-container text-3xl" data-icon="bubble_chart" data-weight="fill" style="font-variation-settings: 'FILL' 1;">bubble_chart</span>
+</div>
+<span class="font-title text-title text-on-surface text-center leading-tight">Pop the<br/>bubbles</span>
+</button>
+</div>
+</main>
+<!-- Bottom Nav Bar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-2 h-[84px] bg-surface dark:bg-surface-container-lowest border-t border-border dark:border-outline-variant">
+<!-- Inactive: Home -->
+<button class="flex flex-col items-center justify-center text-text-tertiary dark:text-tertiary-fixed-dim hover:bg-surface-alt dark:hover:bg-surface-container-high rounded-[20px] active:scale-90 transition-all duration-200 min-w-[64px] min-h-[56px] focus:outline-none">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label text-label">Home</span>
+</button>
+<!-- Active: Play -->
+<button class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim bg-primary-fixed dark:bg-primary-container rounded-full px-4 py-1 hover:bg-surface-alt dark:hover:bg-surface-container-high active:scale-90 transition-all duration-200 min-w-[64px] min-h-[56px] focus:outline-none">
+<span class="material-symbols-outlined mb-1" data-icon="extension" data-weight="fill" style="font-variation-settings: 'FILL' 1;">extension</span>
+<span class="font-label text-label font-bold">Play</span>
+</button>
+<!-- Inactive: Closet -->
+<button class="flex flex-col items-center justify-center text-text-tertiary dark:text-tertiary-fixed-dim hover:bg-surface-alt dark:hover:bg-surface-container-high rounded-[20px] active:scale-90 transition-all duration-200 min-w-[64px] min-h-[56px] focus:outline-none">
+<span class="material-symbols-outlined mb-1" data-icon="checkroom">checkroom</span>
+<span class="font-label text-label">Closet</span>
+</button>
+<!-- Inactive: Progress -->
+<button class="flex flex-col items-center justify-center text-text-tertiary dark:text-tertiary-fixed-dim hover:bg-surface-alt dark:hover:bg-surface-container-high rounded-[20px] active:scale-90 transition-all duration-200 min-w-[64px] min-h-[56px] focus:outline-none">
+<span class="material-symbols-outlined mb-1" data-icon="star">star</span>
+<span class="font-label text-label">Progress</span>
+</button>
+</nav>
+<script>
+        // Simple script to handle playful active states beyond CSS for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('touchstart', () => {
+                button.style.transform = 'scale(0.95)';
+            }, {passive: true});
+            button.addEventListener('touchend', () => {
+                button.style.transform = 'scale(1)';
+            }, {passive: true});
+        });
+    </script>
+</body></html>
