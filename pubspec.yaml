@@ -1,0 +1,38 @@
+name: bloom_play
+description: "Bloom Play - a responsive 2D interactive learning engine for preschoolers, built in Flutter."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.12.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+  # State management
+  flutter_riverpod: ^2.5.1
+
+  # Routing / navigation shell
+  go_router: ^14.2.7
+
+  # Local persistence (lesson completion + costume unlocks, no backend)
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
+  # Rive runtime for the character costume bridge + global reactions
+  rive: ^0.13.20
+
+  # Design system font (Baloo 2)
+  google_fonts: ^6.2.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
